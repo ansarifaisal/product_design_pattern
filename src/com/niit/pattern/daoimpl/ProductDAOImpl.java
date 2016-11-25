@@ -69,21 +69,17 @@ public class ProductDAOImpl implements ProductDAO{
 		products.remove(product);
 		return true;
 	}
-
 	@Override
-	public List<Product> catList() {
-		return tempList;
-	}
-	@Override
-	public Product getCat(String cat) {
-		tempList = new ArrayList<>();
+	public List<Product> getByCategory(String category) {
+		List<Product> temp = new ArrayList<>();
 		for (Product product : products) {
-			if(product.getCategory().equals(cat)){
-				tempList.add(product);
-				
+			if(product.getCategory().equals(category)){
+				temp.add(product);
 			}
 		}
-		return null;
+		return temp;
 	}
+
+	
 	
 }
